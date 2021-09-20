@@ -30,6 +30,8 @@ schema_view = get_schema_view(
       contact=openapi.Contact(email="dm_plugin@zuri.chat"),
       license=openapi.License(name="BSD License"),
    ),
+   url="https://dm.zuri.chat",
+# url="http://127.0.0.1:8000",
    public=True,
    permission_classes=(permissions.AllowAny,),
    #validators=["ssv"],
@@ -40,6 +42,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('backend.urls')),
+    path('dm', include('backend.urls')),
 ]
 
 
